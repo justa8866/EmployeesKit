@@ -1,0 +1,52 @@
+{
+  "name": "employeeskit",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "lint": "tsc --noEmit && eslint src/**/*.{ts,tsx}",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "precommit": "lint-staged && npm run lint",
+    "prepare": "husky install && chmod ug+x .husky/*",
+    "prettier:check": "prettier --check ./**/*.{ts,js,json,*rc}",
+    "prettier:write": "prettier --write ./**/*.{ts,js,json,*rc}",
+    "preview": "vite preview",
+    "sort-package-json": "npx sort-package-json"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "sort-by": "^0.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.4.4",
+    "@commitlint/config-conventional": "17.4.4",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.35.0",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
