@@ -20,7 +20,6 @@ export const getEmployees = async () => {
     const result = await getDocs(employeeCol)
 
     const data = result.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-    console.log(data)
 
     return data
   } catch (e) {
