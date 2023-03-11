@@ -17,18 +17,34 @@ const theme = createTheme({
       fontWeight: '700',
     },
     h1: {
-      fontSize: '20px',
-      fontFamily: 'Noto Sans',
-      fontWeight: 'bold',
-      letterSpacing: '1px',
-      color: '#2a0818',
+      color: '#EBA62D',
+      fontSize: '24px',
+      fontFamily: 'Helvetica',
+      fontWeight: '700',
     },
-
-    h6: {
-      fontSize: '16px',
-      fontWeight: '500',
-      letterSpacing: '2px',
+    h2: {
       color: '#fff',
+      fontSize: '24px',
+      fontFamily: 'Helvetica',
+      fontWeight: '700',
+    },
+    h4: {
+      fontSize: '22px',
+      fontFamily: 'Noto Sans',
+      fontWeight: '700',
+      color: '#DDE1E5',
+    },
+    h5: {
+      fontSize: '13px',
+      fontFamily: 'Noto Sans',
+      fontWeight: '700',
+      color: '#DDE1E5',
+    },
+    h6: {
+      fontSize: '13px',
+      fontFamily: 'Noto Sans',
+      fontWeight: '500',
+      color: '#DDE1E5',
     },
   },
 })
