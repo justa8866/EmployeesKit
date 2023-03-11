@@ -1,9 +1,9 @@
 import React from 'react'
-import Employee from '../../components/Employee'
 import LayoutGrid from '../../common/LayoutGrid'
 import { ModalProvider } from '../../common/Modal/context'
 import NavProvider from '../../components/Navbar/Reducer/NavReducer'
 import Navbar from '../../components/Navbar'
+import { Grid } from '@mui/material'
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
         <Navbar />
       </NavProvider>
       <LayoutGrid>
-        <Employee />
+        <Grid container mt={10}></Grid>
       </LayoutGrid>
     </ModalProvider>
   )

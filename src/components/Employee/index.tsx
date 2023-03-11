@@ -59,7 +59,7 @@ const Employee = () => {
       <Button variant='contained' onClick={() => ContextModal?.handleModal(<CreateEmployee />)}>
         Create employee
       </Button>
-      <MainTable  aria-label='employee table'>
+      <MainTable aria-label='employee table'>
         <TableHead>
           <TableRow>
             <TableCell>id</TableCell>
