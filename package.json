@@ -8,6 +8,8 @@
     "dev": "vite",
     "lint": "tsc --noEmit && eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "netlify-deploy-cli": "netlify deploy",
+    "netlify-deploy-cli-prod": "netlify deploy --prod",
     "precommit": "lint-staged && npm run lint",
     "prepare": "husky install && chmod ug+x .husky/*",
     "prettier:check": "prettier --check ./**/*.{ts,js,json,*rc}",
@@ -58,6 +60,7 @@
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
+    "netlify-cli": "^13.1.2",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
   }
