@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Grid } from '@mui/material'
-import { NavActionKind, useNav } from './Reducer/NavReducer'
 import MenuIcon from '@mui/icons-material/Menu'
+import { NavActionKind, useNav } from './Reducer/NavReducer'
 import LayoutGrid from '../../common/LayoutGrid'
 import {
   BoxMenu,
@@ -12,26 +12,29 @@ import {
   MenuIconButton,
 } from './Navbar.style'
 
-import PeopleAndTasksIcon from '../../assets/PeopleAndTasksIcon'
 import PeopleIcon from '../../assets/PeopleIcon'
 import TasksIcon from '../../assets/TasksIcon'
+import PeopleAndTasksIcon from '../../assets/PeopleAndTasksIcon'
 import Logo from '../../common/Logo'
 import NavItems, { IItemNavElement } from '../../common/NavItems/NavItems'
 import DrawerElement from '../DrawerElement/DrawerElemrent'
+import RoutesList from '../../router/routes'
 
 const items: IItemNavElement[] = [
   {
+    value: 'Home',
+    icon: PeopleAndTasksIcon,
+    href: RoutesList.Home,
+  },
+  {
     value: 'Employees',
     icon: PeopleIcon,
+    href: RoutesList.Employee,
   },
   {
     value: 'Tasks',
     icon: TasksIcon,
-
-  },
-  {
-    value: 'Employees and their tasks',
-    icon: PeopleAndTasksIcon,
+    href: RoutesList.Task,
   },
 ]
 

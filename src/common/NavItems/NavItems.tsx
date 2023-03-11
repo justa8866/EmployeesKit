@@ -1,4 +1,4 @@
-import { IconButton, Link } from '@mui/material'
+import { IconButton } from '@mui/material'
 import { BoxColor, MainBox, Text } from './NavItems.style'
 import React from 'react'
 
@@ -20,7 +20,9 @@ const NavItems = ({ items }: IPropNavItems) => {
           <IconButton edge='start' color='inherit' aria-label='menu'>
             <item.icon />
           </IconButton>
-          <Link href={item.href}><Text variant='h5'>{item.value}</Text></Link>
+          <Text href={item.href} variant='h5'>
+            {item.value}
+          </Text>
         </BoxColor>
       ))}
     </MainBox>
