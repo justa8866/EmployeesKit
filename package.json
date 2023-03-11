@@ -21,17 +21,28 @@
     }
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.11",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.12",
+    "@mui/styled-engine-sc": "^5.11.11",
+    "@mui/system": "^5.11.12",
+    "@mui/x-date-pickers": "^6.0.1",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "firebase": "^9.17.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "moment": "^2.29.4",
     "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.5",
     "react-router-dom": "^6.8.1",
-    "sort-by": "^1.0.0"
+    "react-toastify": "^9.1.1",
+    "sort-by": "^0.0.2",
+    "styled-components": "^5.3.8",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@commitlint/cli": "17.4.4",

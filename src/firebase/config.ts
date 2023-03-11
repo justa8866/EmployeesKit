@@ -1,5 +1,6 @@
+import { IEmployee } from './../components/Employee/types/IEmployee'
 import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
+import { collection, CollectionReference, DocumentData, getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -13,3 +14,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 
 export const db = getFirestore(app)
+
+const createCollection = <T = DocumentData>(collectionName: string) => {
+  return collection(db, collectionName) as CollectionReference<T>
+}
+
+export const employeeCollectionName = 'employee'
+export const employeeCol = createCollection<IEmployee>(employeeCollectionName)
