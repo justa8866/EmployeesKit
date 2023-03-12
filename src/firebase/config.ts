@@ -1,4 +1,4 @@
-import { IEmployee } from './../components/Employee/types/IEmployee'
+import { IEmployee } from '../domain/employee/types/IEmployee'
 import { initializeApp } from 'firebase/app'
 import { collection, CollectionReference, DocumentData, getFirestore } from 'firebase/firestore'
 import { ITask } from '../components/Task/types/ITask.type'

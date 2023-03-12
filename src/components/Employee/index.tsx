@@ -9,8 +9,8 @@ import {
   TableRow,
 } from '@mui/material'
 import React, { useContext, useEffect, useState } from 'react'
-import { deleteEmployee, getEmployees } from './services/employee.service'
-import { IEmployee } from './types/IEmployee'
+import { deleteEmployee, getEmployees } from '../../domain/employee/services/employee.service'
+import { IEmployee } from '../../domain/employee/types/IEmployee'
 import { toast } from 'react-toastify'
 import { onSnapshot } from 'firebase/firestore'
 import { employeeCol } from '../../firebase/config'

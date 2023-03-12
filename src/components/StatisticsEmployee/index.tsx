@@ -10,8 +10,8 @@ import {
 } from '@mui/material'
 import moment from 'moment'
 
-import { getEmployees, getIdFromPath } from '../Employee/services/employee.service'
-import { IEmployee } from '../Employee/types/IEmployee'
+import { getEmployees, getIdFromPath } from '../../domain/employee/services/employee.service'
+import { IEmployee } from '../../domain/employee/types/IEmployee'
 
 import { getTasks } from '../Task/services/task.service'
 

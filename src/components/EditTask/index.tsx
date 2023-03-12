@@ -20,9 +20,9 @@ import { toast } from 'react-toastify'
 import { Timestamp } from 'firebase/firestore'
 import { updateTask } from '../Task/services/task.service'
 import { TaskInput, taskSchema } from '../Task/schemas/task.schema'
-import { IEmployee } from '../Employee/types/IEmployee'
+import { IEmployee } from '../../domain/employee/types/IEmployee'
 import { ITask } from '../Task/types/ITask.type'
-import { getIdFromPath } from '../Employee/services/employee.service'
+import { getIdFromPath } from '../../domain/employee/services/employee.service'
 
 const today = moment()
 

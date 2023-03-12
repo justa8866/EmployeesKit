@@ -4,13 +4,13 @@ import { Box, Button, Grid, TextField, Typography } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { EmployeeInput, employeeSchema } from '../Employee/schemas/employee.schema'
-import { updateEmployee } from '../Employee/services/employee.service'
+import { EmployeeInput, employeeSchema } from '../../domain/employee/schemas/employee.schema'
+import { updateEmployee } from '../../domain/employee/services/employee.service'
 import { DatePicker } from '@mui/x-date-pickers'
 import moment from 'moment'
 import { toast } from 'react-toastify'
 import { Timestamp } from 'firebase/firestore'
-import { IEmployee } from '../Employee/types/IEmployee'
+import { IEmployee } from '../../domain/employee/types/IEmployee'
 
 const today = moment()
 

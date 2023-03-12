@@ -11,7 +11,6 @@ export const GridLogo = styled(Grid)({
   display: 'flex',
 })
 
-
 export const GridVisibility = styled(Grid)(({ theme }) => ({
   lineHeight: '80px',
   [theme.breakpoints.down('lg')]: {
