@@ -22,6 +22,8 @@ import { deleteTask, getTasks } from './services/task.service'
 import { getEmployees, getIdFromPath } from '../Employee/services/employee.service'
 import { IEmployee } from '../Employee/types/IEmployee'
 import EditTask from '../EditTask'
+import { onSnapshot } from 'firebase/firestore'
+import { taskCol } from '../../firebase/config'
 
 interface ITaskListWithFetchedEmployee extends ITask {
   employeFullName?: string
@@ -40,15 +42,18 @@ const Task = () => {
     }
 
     getEmployee()
-    //   onSnapshot(taskCol, snap => {
-    //     const tasks = snap.docs.map(task => ({ ...task.data(), id: task.id }))
-    //     setTaskList(tasks)
-    //   })
   }, [])
 
   useEffect(() => {
     addFetchedEmployeeToListOfTasks()
   }, [employeesList])
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    onSnapshot(taskCol, snap => {
+      addFetchedEmployeeToListOfTasks()
+    })
+  }, [taskList])
 
   const addFetchedEmployeeToListOfTasks = async () => {
     const list = await getTasks()
