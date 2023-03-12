@@ -1,6 +1,7 @@
 import { IconButton } from '@mui/material'
 import { BoxColor, MainBox, Text } from './NavItems.style'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export interface IItemNavElement {
   value: string
@@ -20,9 +21,11 @@ const NavItems = ({ items }: IPropNavItems) => {
           <IconButton edge='start' color='inherit' aria-label='menu'>
             <item.icon />
           </IconButton>
-          <Text href={item.href} variant='h5'>
-            {item.value}
-          </Text>
+          <Link to={item.href || ''}>
+            <Text href={item.href} variant='h5'>
+              {item.value}
+            </Text>
+          </Link>
         </BoxColor>
       ))}
     </MainBox>
