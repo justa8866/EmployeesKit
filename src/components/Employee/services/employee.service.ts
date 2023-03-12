@@ -1,4 +1,13 @@
-import { addDoc, getDocs, Timestamp, doc, deleteDoc, updateDoc } from 'firebase/firestore'
+import {
+  addDoc,
+  getDocs,
+  Timestamp,
+  doc,
+  deleteDoc,
+  updateDoc,
+  DocumentReference,
+  getDoc,
+} from 'firebase/firestore'
 import { db, employeeCol, employeeCollectionName } from '../../../firebase/config'
 import { IEmployee } from '../types/IEmployee'
 
@@ -25,6 +34,19 @@ export const getEmployees = async () => {
   } catch (e) {
     return []
   }
+}
+
+export const getEmployee = async (employeeRef: DocumentReference) => {
+  try {
+    const employeeSnapshot = await getDoc(employeeRef)
+    return employeeSnapshot.data()
+  } catch (e) {
+    return null
+  }
+}
+
+export const getIdFromPath = (employeeRef: DocumentReference) => {
+  return employeeRef.path.replace(employeeCollectionName + '/', '')
 }
 
 export const deleteEmployee = async (id: string) => {

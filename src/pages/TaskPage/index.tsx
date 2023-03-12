@@ -1,9 +1,10 @@
 import React from 'react'
-import { Grid } from '@mui/material'
 import LayoutGrid from '../../common/LayoutGrid'
 import { ModalProvider } from '../../common/Modal/context'
 import NavProvider from '../../components/Navbar/Reducer/NavReducer'
 import Navbar from '../../components/Navbar'
+import { Grid } from '@mui/material'
+import Task from '../../components/Task'
 
 const HomePage = () => {
   return (
@@ -12,7 +13,9 @@ const HomePage = () => {
         <Navbar />
       </NavProvider>
       <LayoutGrid>
-        <Grid container mt={10}></Grid>
+        <Grid container mt={10}>
+          <Task />
+        </Grid>
       </LayoutGrid>
     </ModalProvider>
   )

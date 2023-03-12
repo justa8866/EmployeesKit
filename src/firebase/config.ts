@@ -1,13 +1,14 @@
 import { IEmployee } from './../components/Employee/types/IEmployee'
 import { initializeApp } from 'firebase/app'
 import { collection, CollectionReference, DocumentData, getFirestore } from 'firebase/firestore'
+import { ITask } from '../components/Task/types/ITask.type'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_authDomain,
   projectId: import.meta.env.VITE_FIREBASE_projectId,
-  storageBucket: import.meta.env.VITE_FIREBASE_messagingSenderId,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_storageBucket,
+  storageBucket: import.meta.env.VITE_FIREBASE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_messagingSenderId,
   appId: import.meta.env.VITE_FIREBASE_appId,
 }
 
@@ -21,3 +22,6 @@ const createCollection = <T = DocumentData>(collectionName: string) => {
 
 export const employeeCollectionName = 'employee'
 export const employeeCol = createCollection<IEmployee>(employeeCollectionName)
+
+export const taskCollectionName = 'task'
+export const taskCol = createCollection<ITask>(taskCollectionName)
