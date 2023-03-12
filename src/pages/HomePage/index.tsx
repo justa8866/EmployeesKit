@@ -4,6 +4,7 @@ import LayoutGrid from '../../common/LayoutGrid'
 import { ModalProvider } from '../../common/Modal/context'
 import NavProvider from '../../components/Navbar/Reducer/NavReducer'
 import Navbar from '../../components/Navbar'
+import StatisticsEmployee from '../../components/StatisticsEmployee'
 
 const HomePage = () => {
   return (
@@ -12,7 +13,9 @@ const HomePage = () => {
         <Navbar />
       </NavProvider>
       <LayoutGrid>
-        <Grid container mt={10}></Grid>
+        <Grid container mt={10}>
+          <StatisticsEmployee />
+        </Grid>
       </LayoutGrid>
     </ModalProvider>
   )
