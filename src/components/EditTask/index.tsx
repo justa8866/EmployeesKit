@@ -18,10 +18,10 @@ import { DatePicker } from '@mui/x-date-pickers'
 import moment from 'moment'
 import { toast } from 'react-toastify'
 import { Timestamp } from 'firebase/firestore'
-import { updateTask } from '../Task/services/task.service'
-import { TaskInput, taskSchema } from '../Task/schemas/task.schema'
+import { updateTask } from '../../domain/task/services/task.service'
+import { TaskInput, taskSchema } from '../../domain/task/schemas/task.schema'
 import { IEmployee } from '../../domain/employee/types/IEmployee'
-import { ITask } from '../Task/types/ITask.type'
+import { ITask } from '../../domain/task/types/ITask.type'
 import { getIdFromPath } from '../../domain/employee/services/employee.service'
 
 const today = moment()

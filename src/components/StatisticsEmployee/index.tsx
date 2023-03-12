@@ -13,7 +13,7 @@ import moment from 'moment'
 import { getEmployees, getIdFromPath } from '../../domain/employee/services/employee.service'
 import { IEmployee } from '../../domain/employee/types/IEmployee'
 
-import { getTasks } from '../Task/services/task.service'
+import { getTasks } from '../../domain/task/services/task.service'
 
 const format = 'MM / DD / YYYY'
 

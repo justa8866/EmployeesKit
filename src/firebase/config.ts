@@ -1,7 +1,7 @@
 import { IEmployee } from '../domain/employee/types/IEmployee'
 import { initializeApp } from 'firebase/app'
 import { collection, CollectionReference, DocumentData, getFirestore } from 'firebase/firestore'
-import { ITask } from '../components/Task/types/ITask.type'
+import { ITask } from '../domain/task/types/ITask.type'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
