@@ -15,6 +15,11 @@ import { IEmployee } from '../Employee/types/IEmployee'
 
 import { getTasks } from '../Task/services/task.service'
 
+const format = 'MM / DD / YYYY'
+
+const firstDateOfPreviousMonth = moment().subtract(1, 'months').startOf('month')
+const lastDateOfPreviousMonth = moment().subtract(1, 'months').endOf('month')
+
 interface IOccurency {
   [key: string]: number
 }
@@ -48,8 +53,16 @@ const StatisticsEmployee = () => {
         continue
       }
 
-      const id = getIdFromPath(task.assignee)
-      occurencies[id] = occurencies[id] ? occurencies[id] + 1 : 1
+      const taskDate = moment(task.dueDate.toDate())
+
+      if (
+        taskDate.isBetween(firstDateOfPreviousMonth, lastDateOfPreviousMonth) ||
+        taskDate.isSame(firstDateOfPreviousMonth) ||
+        taskDate.isSame(lastDateOfPreviousMonth)
+      ) {
+        const id = getIdFromPath(task.assignee)
+        occurencies[id] = occurencies[id] ? occurencies[id] + 1 : 1
+      }
     }
 
     const sortedTopFiveElements = Object.entries(occurencies)
@@ -84,7 +97,7 @@ const StatisticsEmployee = () => {
               <TableCell align='right'>{employee.email}</TableCell>
               <TableCell align='right'>{employee.phoneNumber}</TableCell>
               <TableCell align='right'>
-                {moment(employee.brithDate.toDate()).format('MM / DD / YYYY')}
+                {moment(employee.brithDate.toDate()).format(format)}
               </TableCell>
             </TableRow>
           ))}
