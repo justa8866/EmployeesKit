@@ -107,7 +107,7 @@ const Task = () => {
         </TableHead>
         <TableBody>
           {taskList.map((task: ITaskListWithFetchedEmployee, index: number) => (
-            <TableRow key={index} >
+            <TableRow key={index}>
               <TableCell component='th' scope='row'>
                 {task.id}
               </TableCell>
@@ -115,7 +115,7 @@ const Task = () => {
               <TableCell>{task.description}</TableCell>
               <TableCell>{task.employeFullName}</TableCell>
               <TableCell>{moment(task.dueDate.toDate()).format('MM / DD / YYYY')}</TableCell>
-              <TableCell align='right'>
+              <TableCell>
                 <IconButton aria-label='delete' onClick={() => handleDelete(task.id as string)}>
                   <DeleteIcon />
                 </IconButton>
