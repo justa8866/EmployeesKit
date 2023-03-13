@@ -81,7 +81,7 @@ const CreateEmployee = () => {
           maxDate={today}
           minDate={moment('1900-01-01')}
           value={birthDate}
-          onChange={newValue => setBirthDate(newValue || today)}
+          onChange={(newValue: moment.Moment | null) => setBirthDate(newValue || today)}
         />
         <Button variant='contained' type='submit'>
           Create

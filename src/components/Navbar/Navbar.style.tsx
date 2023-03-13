@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles'
 import { AppBar, Box, Grid, IconButton } from '@mui/material'
 
 export const MainAppBar = styled(AppBar)(({ theme }) => ({
-  background: theme.palette.primary.main,
+  background: theme.palette.secondary.main,
   height: '80px',
   lineHeight: '80px',
 }))

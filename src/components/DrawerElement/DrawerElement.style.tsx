@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles'
-import { Box, Drawer, ListItemButton } from '@mui/material'
+import { Box, Drawer, Link, ListItemButton } from '@mui/material'
 import Image from 'mui-image'
 
 export const BoxDrawerColor = styled(Box)({
@@ -24,4 +24,8 @@ export const ImageStyle = styled(Image)({
   '&:hover': {
     color: '#EBA62D',
   },
+});
+
+export const LinkStyle = styled(Link)({
+ width: '100%',
 });

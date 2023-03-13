@@ -3,10 +3,10 @@ import { Box, Grid, Link } from '@mui/material'
 import Image from 'mui-image'
 
 export const MainBox = styled(Box)({
-  marginLeft: '10vw',
   display: 'flex',
   gap: '30px',
   textAlign: 'center',
+  justifyContent: 'center',
 })
 
 export const BoxColor = styled(Box)({

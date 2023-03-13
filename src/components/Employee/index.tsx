@@ -1,3 +1,4 @@
+import React, { useContext, useEffect, useState } from 'react'
 import {
   Button,
   IconButton,
@@ -8,7 +9,6 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material'
-import React, { useContext, useEffect, useState } from 'react'
 import { deleteEmployee, getEmployees } from '../../domain/employee/services/employee.service'
 import { IEmployee } from '../../domain/employee/types/IEmployee'
 import { toast } from 'react-toastify'
@@ -63,26 +63,26 @@ const Employee = () => {
         <TableHead>
           <TableRow>
             <TableCell>id</TableCell>
-            <TableCell align='right'>Full Name</TableCell>
-            <TableCell align='right'>E-mail</TableCell>
-            <TableCell align='right'>Phone</TableCell>
-            <TableCell align='right'>Date of birth</TableCell>
-            <TableCell align='right'>Actions</TableCell>
+            <TableCell >Full Name</TableCell>
+            <TableCell >E-mail</TableCell>
+            <TableCell >Phone</TableCell>
+            <TableCell >Date of birth</TableCell>
+            <TableCell >Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {employeeList.map((employee: IEmployee, index: number) => (
-            <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+            <TableRow key={index} >
               <TableCell component='th' scope='row'>
                 {employee.id}
               </TableCell>
               <TableCell>{employee.fullName}</TableCell>
-              <TableCell align='right'>{employee.email}</TableCell>
-              <TableCell align='right'>{employee.phoneNumber}</TableCell>
-              <TableCell align='right'>
+              <TableCell >{employee.email}</TableCell>
+              <TableCell >{employee.phoneNumber}</TableCell>
+              <TableCell >
                 {moment(employee.brithDate.toDate()).format('MM / DD / YYYY')}
               </TableCell>
-              <TableCell align='right'>
+              <TableCell >
                 <IconButton aria-label='delete' onClick={() => handleDelete(employee.id as string)}>
                   <DeleteIcon />
                 </IconButton>

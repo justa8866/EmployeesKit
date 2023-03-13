@@ -12,31 +12,10 @@ import {
   MenuIconButton,
 } from './Navbar.style'
 
-import PeopleIcon from '../../assets/PeopleIcon'
-import TasksIcon from '../../assets/TasksIcon'
-import PeopleAndTasksIcon from '../../assets/PeopleAndTasksIcon'
 import Logo from '../../common/Logo'
-import NavItems, { IItemNavElement } from '../../common/NavItems/NavItems'
+import NavItems from '../../common/NavItems/NavItems'
 import DrawerElement from '../DrawerElement/DrawerElemrent'
-import RoutesList from '../../router/routes'
-
-const items: IItemNavElement[] = [
-  {
-    value: 'Home',
-    icon: PeopleAndTasksIcon,
-    href: RoutesList.Home,
-  },
-  {
-    value: 'Employees',
-    icon: PeopleIcon,
-    href: RoutesList.Employee,
-  },
-  {
-    value: 'Tasks',
-    icon: TasksIcon,
-    href: RoutesList.Task,
-  },
-]
+import { items } from './navItems'
 
 const Navbar = () => {
   const [, dispatch] = useNav()
@@ -49,10 +28,10 @@ const Navbar = () => {
             <GridLogo item xs={6} lg={2}>
               <Logo />
             </GridLogo>
-            <ChangeVisibility container item xs={0} lg={7}>
+            <ChangeVisibility container item xs={0} lg={8}>
               <NavItems items={items} />
             </ChangeVisibility>
-            <GridButton item xs={5} lg={2}>
+            <GridButton item xs={6} lg={2}>
               <BoxMenu>
                 <MenuIconButton
                   size='large'

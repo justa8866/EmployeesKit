@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import {
-  Box,
-  Button,
-  FormControl,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-  Typography,
-} from '@mui/material'
+import { Box, Button, Grid, InputLabel, MenuItem, Select, Typography } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -23,6 +13,7 @@ import { TaskInput, taskSchema } from '../../domain/task/schemas/task.schema'
 import { IEmployee } from '../../domain/employee/types/IEmployee'
 import { ITask } from '../../domain/task/types/ITask.type'
 import { getIdFromPath } from '../../domain/employee/services/employee.service'
+import { TextFieldStyle, FormControlStyle } from './EditTask.style'
 
 const today = moment()
 
@@ -77,11 +68,11 @@ const EditTask = ({ id, title, description, assignee, dueDate, employeesList }: 
 
   return (
     <Grid container>
-      <Typography id='modal-title' variant='h4' component='h2'>
-        Create task
+      <Typography id='modal-title' variant='h4' component='h2' mb='10px'>
+        Update task
       </Typography>
       <Box component='form' noValidate autoComplete='off' onSubmit={handleSubmit(onSubmitHandler)}>
-        <TextField
+        <TextFieldStyle
           label='Title'
           fullWidth
           required
@@ -89,7 +80,7 @@ const EditTask = ({ id, title, description, assignee, dueDate, employeesList }: 
           helperText={errors['title'] ? errors['title'].message : ''}
           {...register('title')}
         />
-        <TextField
+        <TextFieldStyle
           label='Description'
           fullWidth
           required
@@ -97,26 +88,28 @@ const EditTask = ({ id, title, description, assignee, dueDate, employeesList }: 
           helperText={errors['description'] ? errors['description'].message : ''}
           {...register('description')}
         />
-        <FormControl fullWidth>
+        <FormControlStyle fullWidth>
           <InputLabel id='employee-select-label'>Employee</InputLabel>
           <Select
             labelId='employee-select-label'
             id='employee-select'
             value={assigneeId}
-            label='Age'
+            label='employee'
             onChange={event => setAssigneeId(event.target.value as string)}
           >
             {employeesList.map(generateEmployeeItem)}
           </Select>
-        </FormControl>
+        </FormControlStyle>
         <DatePicker
           label='due date'
           value={dueDateState}
           onChange={newValue => setDueDate(newValue || today)}
         />
-        <Button variant='contained' type='submit'>
-          Edit
-        </Button>
+        <Box>
+          <Button variant='contained' type='submit'>
+            Edit
+          </Button>
+        </Box>
       </Box>
     </Grid>
   )

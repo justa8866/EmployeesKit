@@ -8,7 +8,6 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  TextField,
   Typography,
 } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -21,6 +20,7 @@ import { Timestamp } from 'firebase/firestore'
 import { createTask } from '../../domain/task/services/task.service'
 import { TaskInput, taskSchema } from '../../domain/task/schemas/task.schema'
 import { IEmployee } from '../../domain/employee/types/IEmployee'
+import TextFieldStyle from './CreateTask.style'
 
 const today = moment()
 
@@ -66,7 +66,7 @@ const CreateTask = ({ employeesList }: ICreateTask) => {
         Create task
       </Typography>
       <Box component='form' noValidate autoComplete='off' onSubmit={handleSubmit(onSubmitHandler)}>
-        <TextField
+        <TextFieldStyle
           label='Title'
           fullWidth
           required
@@ -74,7 +74,7 @@ const CreateTask = ({ employeesList }: ICreateTask) => {
           helperText={errors['title'] ? errors['title'].message : ''}
           {...register('title')}
         />
-        <TextField
+        <TextFieldStyle
           label='Description'
           fullWidth
           required

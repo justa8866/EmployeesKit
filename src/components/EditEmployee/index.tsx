@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { Box, Button, Grid, TextField, Typography } from '@mui/material'
+import { Box, Button, Grid, Typography } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -11,6 +11,7 @@ import moment from 'moment'
 import { toast } from 'react-toastify'
 import { Timestamp } from 'firebase/firestore'
 import { IEmployee } from '../../domain/employee/types/IEmployee'
+import TextFieldStyle from './EditEmployee.style'
 
 const today = moment()
 
@@ -50,7 +51,7 @@ const EditEmployee = ({ brithDate, fullName, phoneNumber, email, id }: IEmployee
         Edit Employee
       </Typography>
       <Box component='form' noValidate autoComplete='off' onSubmit={handleSubmit(onSubmitHandler)}>
-        <TextField
+        <TextFieldStyle
           label='fullName'
           fullWidth
           required
@@ -58,7 +59,7 @@ const EditEmployee = ({ brithDate, fullName, phoneNumber, email, id }: IEmployee
           helperText={errors['fullName'] ? errors['fullName'].message : ''}
           {...register('fullName')}
         />
-        <TextField
+        <TextFieldStyle
           label='email'
           fullWidth
           required
@@ -66,7 +67,7 @@ const EditEmployee = ({ brithDate, fullName, phoneNumber, email, id }: IEmployee
           helperText={errors['email'] ? errors['email'].message : ''}
           {...register('email')}
         />
-        <TextField
+        <TextFieldStyle
           label='phone'
           fullWidth
           required
@@ -79,6 +80,7 @@ const EditEmployee = ({ brithDate, fullName, phoneNumber, email, id }: IEmployee
           maxDate={today}
           minDate={moment('1900-01-01')}
           value={birthDate}
+          
           onChange={newValue => setBirthDate(newValue || today)}
         />
         <Button variant='contained' type='submit'>

@@ -102,11 +102,12 @@ const Task = () => {
             <TableCell>Description</TableCell>
             <TableCell>Assignee</TableCell>
             <TableCell>Due date</TableCell>
+            <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {taskList.map((task: ITaskListWithFetchedEmployee, index: number) => (
-            <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+            <TableRow key={index} >
               <TableCell component='th' scope='row'>
                 {task.id}
               </TableCell>

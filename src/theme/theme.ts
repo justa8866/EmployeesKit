@@ -15,6 +15,7 @@ const theme = createTheme({
     button: {
       color: 'rgba(121,9,64,0.8575805322128851)',
       fontWeight: '700',
+      marginTop: '10px',
     },
     h1: {
       color: '#EBA62D',

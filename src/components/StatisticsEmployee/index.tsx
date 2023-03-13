@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {
+  Box,
   Paper,
   Table,
   TableBody,
@@ -7,6 +8,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Typography,
 } from '@mui/material'
 import moment from 'moment'
 
@@ -76,34 +78,37 @@ const StatisticsEmployee = () => {
   }
 
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label='employee table'>
-        <TableHead>
-          <TableRow>
-            <TableCell>id</TableCell>
-            <TableCell align='right'>Full Name</TableCell>
-            <TableCell align='right'>E-mail</TableCell>
-            <TableCell align='right'>Phone</TableCell>
-            <TableCell align='right'>Date of birth</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {employeesWithLargestNumberOfCompletedTask.map((employee: IEmployee, index: number) => (
-            <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component='th' scope='row'>
-                {employee.id}
-              </TableCell>
-              <TableCell>{employee.fullName}</TableCell>
-              <TableCell align='right'>{employee.email}</TableCell>
-              <TableCell align='right'>{employee.phoneNumber}</TableCell>
-              <TableCell align='right'>
-                {moment(employee.brithDate.toDate()).format(format)}
-              </TableCell>
+    <Box>
+      <Typography id='modal-title' variant='h4' component='h2' mb='10px'>
+        5 employees who completed the largest number of tasks in the last month
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table aria-label='employee table'>
+          <TableHead>
+            <TableRow>
+              <TableCell>id</TableCell>
+              <TableCell>Full Name</TableCell>
+              <TableCell>E-mail</TableCell>
+              <TableCell>Phone</TableCell>
+              <TableCell>Date of birth</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {employeesWithLargestNumberOfCompletedTask.map((employee: IEmployee, index: number) => (
+              <TableRow key={index}>
+                <TableCell component='th' scope='row'>
+                  {employee.id}
+                </TableCell>
+                <TableCell>{employee.fullName}</TableCell>
+                <TableCell>{employee.email}</TableCell>
+                <TableCell>{employee.phoneNumber}</TableCell>
+                <TableCell>{moment(employee.brithDate.toDate()).format(format)}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
   )
 }
 

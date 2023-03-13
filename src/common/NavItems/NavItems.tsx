@@ -1,13 +1,8 @@
+import React from 'react'
 import { IconButton } from '@mui/material'
 import { BoxColor, MainBox, Text } from './NavItems.style'
-import React from 'react'
 import { Link } from 'react-router-dom'
-
-export interface IItemNavElement {
-  value: string
-  icon: () => JSX.Element
-  href?: string
-}
+import { IItemNavElement } from './types/IItemNavElement.type'
 
 interface IPropNavItems {
   items: IItemNavElement[]
@@ -22,7 +17,7 @@ const NavItems = ({ items }: IPropNavItems) => {
             <item.icon />
           </IconButton>
           <Link to={item.href || ''}>
-            <Text href={item.href} variant='h5'>
+            <Text href={item.href} underline='none' variant='h5'>
               {item.value}
             </Text>
           </Link>
